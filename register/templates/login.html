@@ -3,11 +3,11 @@
 {% load register_extras %}
 {% block body %}
 
-This is my sign up page
+you have signed in
 
 <div class='col-md-8' style="padding-top:15px">
                 <form class="form-horizontal well" id="registerForm" method="POST"
-            	    enctype="multipart/form-data" action="{% url 'signup' %}">
+            	    enctype="multipart/form-data" action="{% url 'login' %}">
             	    <fieldset>
             	        {% csrf_token %} {% load tz %}
             	        {% for field in form.visible_fields %}
@@ -33,7 +33,7 @@ This is my sign up page
 
             					<div class="form-group">
             								 <div class="col-sm-offset-5">
-            										 <button type="submit" class="btn btn-primary">SIGN UP</button>
+            										 <button type="submit" class="btn btn-primary">SIGN IN</button>
             								 </div> <!-- col-sm-offset-6 -->
             						 </div> <!-- form-group -->
 

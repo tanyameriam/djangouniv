@@ -2,7 +2,6 @@
 
 from django import forms
 from django.forms.models import ModelForm
-
 from register.models import *
 from django.utils.translation import ugettext_lazy as _
 

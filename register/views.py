@@ -1,9 +1,10 @@
 from django.shortcuts import render
 from django.views.generic import TemplateView
-from braces.views import LoginRequiredMixin, AnonymousRequiredMixin#we need some files that the logins only should see eg sign in page here anonymouus only could see if deleted the signed in could see
+from braces.views import LoginRequiredMixin, AnonymousRequiredMixin #we need some files that the logins only should see eg sign in page here anonymouus only could see if deleted the signed in could see
 from django.views.generic.edit import FormView, UpdateView
 from django.core.urlresolvers import reverse_lazy
 from register.forms import *
+
 
 class Home(TemplateView):
     template_name = "index.html"
@@ -18,3 +19,15 @@ class UserRegistrationView(AnonymousRequiredMixin, FormView):#this is standard c
     def form_valid(self, form):
       form.save()
       return FormView.form_valid(self, form)
+
+class UserRegistrationSuccessView(TemplateView):
+    template_name= "success.html"
+
+class UserDashboardView(TemplateView):
+    template_name= "dash.html"
+
+
+
+
+
+

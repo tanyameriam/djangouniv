@@ -27,6 +27,8 @@ class MyUserManager(BaseUserManager):
         user.is_admin = True
         user.save(using=self._db)
         return user
+
+
 class User(AbstractBaseUser):
     """
     Extends the default User profiles of Django. The fields of this model can be obtained by the
@@ -91,6 +93,8 @@ class User(AbstractBaseUser):
 
 DIFFICULTY = (('Easy', _('Easy')), ('Medium', _('Medium')), ('Advanced', _('Advanced')))
 LANGUAGE = (('English', _('English')), ('Malayalam', _('Malayalam')), ('Hindi', _('Hindi')))
+
+
 class Course(models.Model):
     """
     Course model
